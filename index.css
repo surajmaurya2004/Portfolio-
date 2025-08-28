@@ -1,0 +1,675 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    list-style: none;
+    overflow: hidden;
+    background-color: #F1EFE9;
+}
+/* .header,.home,.projects-container{
+      width: 10%;
+    max-width: 100%;
+} */
+
+/* ---------------- HEADER ---------------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content:space-evenly ;
+   
+    align-items: center;
+    z-index: 100;
+    height: 42px;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+      text-decoration: none;
+}
+
+.logo:hover {
+    color: orangered;
+    text-shadow: 0 0 25px  orangered,
+                 0 0 25px  orangered;
+    transform: scale(1.1);
+}
+.logo span {
+    color:  orangered;
+  
+}
+
+.navbar a {
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin: 0 15px;
+
+    padding: 15px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: orangered;
+    /* border-bottom: 3px solid orangered; */
+}
+   Hover effect
+   /* .nav-links a {
+  position: relative;
+  padding: 8px 15px;      /* enough padding */
+  /* border-radius: 8px; 
+   padding-right: 50px;
+    margin-right: 40px;  /* smooth corners */
+  /* transition: all 0.3s ease;  */
+/* } */
+
+/* .nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1); /* hover effect andar hi rahe */
+/* } */ */ */
+
+
+
+
+.contact-btn {
+    padding: 8px 16px;
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+} 
+.contact-btn:hover {
+    background-color:orangered;
+    color: white;
+}
+
+/* ---------------- HOME SECTION ---------------- */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 80px 10%;
+}
+
+.home-content {
+    max-width: 800px;
+}
+
+.home-content h3 {
+    font-size: 30px;
+}
+
+.home-content h1 span {
+    font-size: 70px;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin: 25px 0 30px;
+}
+
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
+}
+
+.btn-1, .btn-2 {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Button 1 */
+.btn-1 {
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+}
+.btn-1:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Button 2 */
+.btn-2 {
+    background-color: orangered;
+    color: white;
+    border: 2px solid black;
+    text-decoration: none;
+}
+.btn-2:hover {
+    background-color:white;
+    color: orangered;
+}
+
+.image-box img {
+    border-radius: 5%;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+@media (max-width: 992px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        gap: 3em;
+        padding: 100px 5% 50px;
+    }
+
+    .image-box img {
+        width: 250px;
+    }
+
+    .home-content h1 span {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar {
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .home-content h1 span {
+        font-size: 36px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        width: 100%;
+        gap: 1em;
+    }
+
+    .image-box img {
+        width: 200px;
+    }
+}
+/* ---------------- PROJECTS SECTION ---------------- */
+.projects-container {
+    padding: 80px 2%;
+    
+    background: #F1EFE9;
+    text-align: center;
+}
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+    
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    box-sizing: border-box;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+/* Info Overlay */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: orangered;
+}
+.project-info p {
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* ✅ mobile pe ek-ek project niche aayega */
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 box ek row me */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 box ek row me */
+    }
+}
+
+
+/* ---------------- CONTACT SECTION ---------------- */
+.contact {
+    padding: 50px 10%;
+    background: #F1EFE9;
+    text-align: center;
+}
+
+.contact .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+    font-family: 'poppins', sans-serif;
+    padding: 10px 12px;
+}   
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: orangered;
+}
+
+.btn-submit {
+    background: orangered;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: white;
+    color: black;
+}
+
+ .contact .flex {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+ .social-icons a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: black;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: orangered;
+    transform: scale(1.2);
+}
+ /* Container for social buttons with label */
+.social-connect {
+    display: flex;
+    align-items: center;   /* text aur buttons vertically center */
+    gap: 15px;             /* text aur buttons me gap */
+    margin-top: 20px;      /* thoda niche Send Message button se */
+}
+
+/* Left text styling */
+.social-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Agar Uiverse buttons Tailwind classes use nahi kar rahe to */
+.social-buttons {
+    display: flex;
+    gap: 15px;             /* buttons me spacing */
+}
+/* CONTACT INFO STYLING */
+.contact-info-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.contact-info-box {
+    background-color: white; /* Yellow background color */
+    border-radius: none;
+    padding: 100px;
+    /* margin: 2px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item .label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-item .value {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Specific styling for the email link */
+.contact-item .value a {
+    color: #a06e00; /* Darker yellow/orange for the email link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item .value a:hover {
+    color: #7a5400;
+}
+
+/* Media query for smaller screens to stack the columns */
+@media (max-width: 768px) {
+    .contact-info-box {
+        grid-template-columns: 1fr; /* Stack items on small screens */
+    }
+}
+
+/* CONNECT WITH ME SECTION */
+.contact-info-container {
+    display: flex;
+    flex-direction: column; /* Stacks the boxes vertically */
+    align-items: center; /* Centers the content */
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.connect-links {
+    text-align: left;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.connect-heading {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f7d75c; /* A small underline for style */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icon-link {
+    font-size: 2rem;
+    color: #555;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icon-link:hover {
+    color: #f7d75c; /* Color change on hover */
+    transform: translateY(-5px); /* Upward lift on hover */
+}
+
+
+
+ /* projects */
+.project-label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover karte hi text gayab ho jaye */
+.project-card:hover .project-label {
+    opacity: 0;
+}
+
+
+ /* footer */
+ .navbar a {
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 10px 20px;       /* ✅ box padding */
+    border: 2px solid transparent;  /* border initially transparent */
+    border-radius: 8px;       /* ✅ rounded corners */
+    transition: all 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display:inline-block;
+}
+
+/* Hover Effect */
+.navbar a:hover{
+ 
+  color: #FFA580;          /* text color change */
+    background-color: rgba(255,255,255,0.1);  /* box background */
+    border: 2px solid orangered;  /* border color */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 15px rgba(255,69,0,0.4);     /* slight grow on hover */
+
+}
+.navbar a.active {
+    color: orangered;          /* text color change */
+    background-color: rgba(255,255,255,0.1);  /* box background */
+    border: 2px solid orangered;  /* border color */
+    /* transform: scale(1.1);  */
+  /*  box-shadow: 0 4px 15px rgba(255,69,0,0.4);     slight grow on hover*/
+}
+ html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px; /* header height ke approx */
+}
+ 
+
+/* project images */
+/* Project Card */
+.project-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: 300px; /* thoda chhota rakha height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image */
+.project-card img {
+  width: 70%;
+  height: 100%;
+  object-fit: cover; /* image fit karne ke liye */
+  display: block;
+  transition: transform 0.3s ease,opacity 0.3s ease; /* hover effect ke liye */
+}
+
+
+    .project-card:hover img{
+       transform: scale(1.1);
+       opacity: 0;
+    }
+
+/* Label */
+.project-label {
+  position: absolute; /* absolute banaya */
+  bottom: 0; /* card ke bottom me */
+  left: 10;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: bold;
+  color: white;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Info */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+/* Hover Effects */
+.project-card:hover img {
+  transform: scale(1.1); /* thoda zoom effect */
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+.project-card:hover .project-label {
+  opacity: 0; /* hover pe label hide hoga */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
